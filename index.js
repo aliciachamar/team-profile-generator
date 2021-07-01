@@ -118,7 +118,6 @@ function addEngineer() {
             let { engineerName, engineerId, engineerEmail, engineerGithub } = res;
             let engineer = new Engineer(engineerName, engineerId, engineerEmail, engineerGithub);
             data.push(engineer);
-            console.log(data);
             runMenu();
         })
 };
@@ -129,15 +128,14 @@ function addIntern() {
             let { internName, internId, internEmail, internSchool } = res;
             let intern = new Intern(internName, internId, internEmail, internSchool);
             data.push(intern);
-            console.log(data);
             runMenu();
         })
 };
 
 function init() {
-    let manager;
     inquirer.prompt(managerInfo)
         .then(res => {
+            let manager;
             let { managerName, managerId, managerEmail, managerOfficeNumber } = res;
             manager = new Manager(managerName, managerId, managerEmail, managerOfficeNumber);
             data.push(manager);
