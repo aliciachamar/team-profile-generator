@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "inquirer": "^8.1.1",
+    "inquirer-menu": "^1.0.0",
     "jest": "^27.0.6"
   }
 }
