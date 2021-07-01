@@ -140,8 +140,6 @@ function init() {
             manager = new Manager(managerName, managerId, managerEmail, managerOfficeNumber);
             data.push(manager);
             runMenu();
-            const fileText = html(data);
-            return writeToFile("./dist/index.html", fileText);
         })
 };
 
