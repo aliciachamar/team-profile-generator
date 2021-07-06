@@ -4,7 +4,7 @@ const Employee = require("./lib/Employee");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
-const html = require("./lib/generateHTML");
+const html = require("./src/generateHTML");
 const { run } = require("jest");
 
 let data = [];
@@ -101,13 +101,16 @@ function runMenu() {
     inquirer.prompt(menu)
         .then(res => {
             let choice = res.newEmployee;
-            if (choice === "Add an engineer") {
-                addEngineer();
-            } else if (choice === "Add an intern") {
-                addIntern();
-            } else if (choice === "Done adding employees") {
-                const fileText = html(data);
-                return writeToFile("./dist/index.html", fileText);
+            switch (choice) {
+                case "Add an engineer": 
+                    addEngineer();
+                    break;
+                case "Add an intern": 
+                    addIntern();
+                    break;
+                case "Done adding employees": 
+                    const fileText = html(data);
+                    return writeToFile("./dist/index.html", fileText);
             }
         })
 };
